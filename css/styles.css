@@ -1,0 +1,44 @@
+.jumbotron {
+	background: url("../images/jumbotron-bg-info.jpg") no-repeat top left;
+	background-size: cover;
+}
+
+.btn-custom {
+	background: #f1ec46;
+}
+
+.btn-custom: hover {
+	background: #ffff66;
+	color: #ffffff;
+}
+
+a.BackToTop {
+	color: #ffffff;
+	text-decoration: none;
+}
+a.BackToTop:hover {
+	color: #fff333;
+	text-decoration: none;
+}
+
+.bg-custom {
+	background: #f1ec46;
+}
+
+.jumbo-header{
+	font-family: 'Playfair Display', serif;
+}
+
+.logo{
+	max-width: 50px;
+}
+
+.label {
+    font-weight: 650;
+    color: #373a3c;
+    padding-top: 1em;
+}
+
+.icons{
+	display: relative;
+}
