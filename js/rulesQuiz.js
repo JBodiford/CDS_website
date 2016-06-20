@@ -41,7 +41,7 @@ Question.prototype.isCorrectAnswer = function (choice) {
 var QuizUI = {
     displayNext: function () {
         var nextButton = document.getElementById("next");
-        nextButton.style.visibility = "hidden";
+        nextButton.style.display = "none";
 
         if (quiz.hasEnded()) {
             this.displayScore();
@@ -58,13 +58,19 @@ var QuizUI = {
     },
     displayChoices: function() {
         var choices = quiz.getCurrentQuestion().choices;
-        for(var i = 0; i < choices.length; i++) {
-            this.populateIdWithHTML("choice" + i, choices[i]);
-            this.guessHandler("guess" + i, choices[i]);
-            document.getElementById("choice" + i).style.display = "";
-            document.getElementById("guess" + i).style.display = "";
+        for(var i = 0; i < 5; i++) {
+            if(i < choices.length) {
+                this.populateIdWithHTML("choice" + i, choices[i]);
+                this.guessHandler("guess" + i, choices[i]);
+                document.getElementById("choice" + i).style.display = "";
+                document.getElementById("guess" + i).style.display = "";
+            } else {
+                 document.getElementById("choice" + i).style.display = "none";
+                 document.getElementById("guess" + i).style.display = "none";
+            }
         }
     },
+
 
     displayScore: function() {
         var gameOverHTML = "<h1>Game Over</h1>";
@@ -87,7 +93,7 @@ var QuizUI = {
 
     nextHandler: function(){
         var nextButton = document.getElementById("next");
-        nextButton.style.visibility = "visible";
+        nextButton.style.display = "block";
         nextButton.onclick = function() {
             QuizUI.displayNext();
         }
